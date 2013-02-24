@@ -1,7 +1,4 @@
-*.pyc 
-.ropeproject/ 
-.ropeproject/* 
-.ropeproject/
-.sublime*
+config.ini
 *.sublime*
+.ropeproject/
 output.html
