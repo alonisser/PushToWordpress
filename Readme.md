@@ -8,8 +8,9 @@ first iteration
 
 ##Techonology
 Using:
-    [python-wordpress-xmlrpc](https://github.com/maxcutler/python-wordpress-xmlrpc)
-    [python-markdown](https://github.com/waylan/Python-Markdown)
+
+1.[python-wordpress-xmlrpc](https://github.com/maxcutler/python-wordpress-xmlrpc)
+2.[python-markdown](https://github.com/waylan/Python-Markdown)
 
 using wordpress XML-RPC Api to drive wordpress
 
