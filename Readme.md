@@ -1,5 +1,7 @@
 #Push To (Markdown) to wordpress
 
+**very early stage of design!**
+
 A simple commandline blogging tool for python.
 
 first iteration
