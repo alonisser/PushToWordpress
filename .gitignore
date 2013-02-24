@@ -1,1 +1,6 @@
 *.pyc 
+.ropeproject/ 
+.ropeproject/* 
+.ropeproject/
+.sublime*
+*.sublime*
