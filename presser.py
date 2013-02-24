@@ -31,6 +31,7 @@ parser.read('config.ini')
 siteurl = "%s/%s" % (parser.get('wordpress_site','site'),"xmlrpc.php")
 username = parser.get('wordpress_site','username')
 password = parser.get('wordpress_site','password')
+#TODO: check for missing configs
 
 print (siteurl, username, password, sep="\n")
 #send the parsed html to wordpress
