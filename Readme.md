@@ -1,4 +1,4 @@
-#Push To (Markdown) to wordpress
+#Push (Markdown) to wordpress
 
 **very early stage of design!**
 
@@ -17,7 +17,14 @@ using wordpress XML-RPC Api to drive wordpress
 ##Installing
 pip install -r require.txt
 
-##Usage
+##Usage:
 basic:
 
     python presser.py inputfile.md optionaltitle
+
+##TODO or "How can I help":
+
+* add tests
+* implents TODOs in presser.py
+* make a setup script that installs this as a command line tool in python/[bin,scripts] !
+* add docs
