@@ -2,7 +2,7 @@
 
 **very early stage of design!**
 
-A simple commandline blogging tool for python. A commandline wrapper to publishing
+A simple, python based, commandline wordpress blogging tool. A commandline wrapper to publishing with [python-markdown](https://github.com/waylan/Python-Markdown)
 
 first iteration
 
@@ -22,9 +22,14 @@ basic:
 
     python presser.py inputfile.md optionaltitle
 
+Simple isn't it? going to be simpler soon..
+currently can't handle media files with the posts (but check the TODO section for more info about that).
+
 ##TODO or "How can I help":
 
 * add tests
 * implents TODOs in presser.py
 * make a setup script that installs this as a command line tool in python/[bin,scripts] !
 * add docs
+* add option to upload plaintext files, html files, Rst files etc.
+* add option to upload media files with the post
