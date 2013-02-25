@@ -23,17 +23,20 @@ if sys.argv[-1] == 'publish':
 setup(
     name = "Push_To_Wordpress",
     version = VERSION,
-    scripts = ['presser.py'],
+    #cripts = ['presser.py'],
 
-    # Project uses reStructuredText, so ensure that the docutils get
-    # installed or upgraded on the target machine
     install_requires = required,
 
     package_data = {
         # If any package contains *.txt or *.rst files, include them:
         '': ['*.md', '*.rst'],
-    }
-
+    },
+    packages = ['push_to_wordpress'],
+    entry_points = {
+        'console_scripts': [
+            'presser = push_to_wordpress.presser:presser'
+        ],
+    },
     # metadata for upload to PyPI
     author = "Alonisser",
     author_email = "alonisser@gmail.com",
@@ -41,6 +44,16 @@ setup(
     license = "permissive",
     keywords = "blogging wordpress commandline",
     url = "https://github.com/alonisser/PushToWordpress",   # project home page, if any
+    classifiers=(
+        'Development Status :: 1 - alpha',
+        'Intended Audience :: bloggers',
+        'Natural Language :: English',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+#maybe more, didn't check
+    ),
 
     # could also include long_description, download_url, classifiers, etc.
 )

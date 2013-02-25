@@ -1,4 +1,8 @@
+*.pyc
 config.ini
 *.sublime*
 .ropeproject/
 output.html
+build/
+dist/
+Push_To_Wordpress.egg-info
