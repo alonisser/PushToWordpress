@@ -17,7 +17,13 @@ using wordpress XML-RPC Api to drive wordpress.
 
 
 ##Installing
-pip install -r require.txt
+currently:
+    git clone this repo
+    cd repo folder
+    pip install -r require.txt
+    python setup.py install
+
+working on a 'pip install' version
 
 ##Usage:
 basic:
