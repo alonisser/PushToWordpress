@@ -8,6 +8,7 @@
 * Publish to Pypi
 * Implent options
 * work with plaintext files, html files, Rst files etc.
+* check for unicode problems
 
 ##Option to implent
 
@@ -18,4 +19,3 @@
 * Add option for a dry-run - just checking if the connection works
 * Add option to choose post_status: draft (default), published, private.
 * Add option to choose title
-* Add o
