@@ -13,7 +13,7 @@ Using:
 1. [python-wordpress-xmlrpc](https://github.com/maxcutler/python-wordpress-xmlrpc)  
 2. [python-markdown](https://github.com/waylan/Python-Markdown)  
 
-using wordpress XML-RPC Api to drive wordpress.
+using wordpress [XML-RPC Api](http://codex.wordpress.org/XML-RPC_WordPress_API) to drive wordpress.
 
 
 ##Installing
@@ -24,12 +24,14 @@ currently:
     cd repo folder
     python setup.py install (If that doesn't work you should run the build command first)
 
-working on a 'pip install' version, straight from the cheeseshop
+working on a 'pip install' version, straight from the cheeseshop  
 
 ##Usage:
-basic:
+Current and quite basic:
 
-    python presser.py inputfile.md optionaltitle
+    presser inputfile.md optionaltitle
+
+where there is a config.ini file with wordpress blog connection details in the same folder. 
 
 Simple isn't it? going to be simpler soon..  
 currently can't handle media files with the posts (but check the TODO section for more info about that).
@@ -39,3 +41,7 @@ Don't forget to enter your wordpress blog config in the config.ini file (look at
 ##TODO or "How can I help":
 
 check TODO.md
+
+##Notice:
+
+for older wordpress installs you should enable [enable the XML-RPC api](http://codex.wordpress.org/XML-RPC_Support) in later versions it's enabled by default.

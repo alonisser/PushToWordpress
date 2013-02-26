@@ -19,3 +19,4 @@
 * Add option for a dry-run - just checking if the connection works
 * Add option to choose post_status: draft (default), published, private.
 * Add option to choose title
+* find a config.ini in the whole folder tree, add option to various config*.ini names
