@@ -9,7 +9,7 @@ from wordpress_xmlrpc.methods.posts import NewPost
 
 def presser():
     #TODO: change this part to optionparser
-    if len(sys.argv) == 1 or sys.argv[1] == None:
+    if len(sys.argv) == 1 or sys.argv[1] is None:
         print ("missing input file")
         exit()
 
