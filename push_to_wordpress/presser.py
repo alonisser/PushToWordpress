@@ -22,10 +22,12 @@ def presser():
     parser.add_argument('--title', action='store', dest='title', default='A new post' )
     parser.add_argument('--posts', help='a space seperated list of post names', default=[], dest='posts_to_process',nargs='+')
     parser.add_argument('--status', choices=('draft', 'publish','private'),help='post status defaults to %(default)s', default='draft', dest='status')
+    
     # parser.add_argument('--siturl', action='store', dest='siteurl', help="the siteurl without xmlrpc overrides the config file" )
     # parser.add_argument('--username', action='store', dest='username', help="the username overrides the config file")
     # parser.add_argument('--password', action='store', dest='password', help="the password overrides the config file")
-    # parser.add_argument('help')
+    # parser.add_argument('help')#to implent later
+    parser.add_argument('--dry-run',action="store_true", default=False) #to implent later
     options = parser.parse_args()
     
     #parse configfile to wordpress
