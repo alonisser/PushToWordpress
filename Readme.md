@@ -1,11 +1,13 @@
 #Push (Markdown) to wordpress
 
-**very early stage of design!**
+**currently basic functionality**
 
 A simple, python based, commandline wordpress blogging tool.  
 A commandline wrapper to publishing with [python-markdown](https://github.com/waylan/Python-Markdown)
 
-first iteration
+##Version
+
+[Version](Version.md)
 
 ##Techonology
 Using:
