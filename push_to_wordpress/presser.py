@@ -22,9 +22,9 @@ def presser():
     parser.add_argument('--title', action='store', dest='title', default='A new post' )
     parser.add_argument('--posts', help='a space seperated list of post names', default=[], dest='posts_to_process',nargs='+')
     parser.add_argument('--status', choices=('draft', 'publish','private'),help='post status defaults to %(default)s', default='draft', dest='status')
-    parser.add_argument('--siturl', action='store', dest='siteurl', )
-    parser.add_argument('--username', action='store', dest='username')
-    parser.add_argument('--password', action='store', dest='password')
+    # parser.add_argument('--siturl', action='store', dest='siteurl', help="the siteurl without xmlrpc overrides the config file" )
+    # parser.add_argument('--username', action='store', dest='username', help="the username overrides the config file")
+    # parser.add_argument('--password', action='store', dest='password', help="the password overrides the config file")
     # parser.add_argument('help')
     options = parser.parse_args()
     
