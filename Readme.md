@@ -39,7 +39,9 @@ Simple isn't it? going to be simpler soon..
 currently can't handle media files with the posts (but check the TODO section for more info about that).
 Don't forget to enter your wordpress blog config in the config.ini file (look at configdemo.ini for inspiration)
 
-[License](License.md)
+##License 
+see **[License](License.md)**
+
 ##TODO or "How can I help":
 
 check our [TODO](TODO.md)
