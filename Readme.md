@@ -29,9 +29,11 @@ working on a 'pip install' version, straight from the cheeseshop
 ##Usage:
 Current and quite basic:
 
-    presser inputfile.md optionaltitle
+    presser --title optionaltitle --posts inputfile.md anotherinputfile
 
 where there is a config.ini file with wordpress blog connection details in the same folder. 
+
+**[Full command line options and flags](usage.txt)**
 
 Simple isn't it? going to be simpler soon..  
 currently can't handle media files with the posts (but check the TODO section for more info about that).

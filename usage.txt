@@ -1,0 +1,14 @@
+usage: presser-script.py [-h] [--config CONFIGFILE] [--title TITLE]
+                         [--posts POSTS_TO_PROCESS [POSTS_TO_PROCESS ...]]
+                         [--status {draft,publish,private}]
+
+presser - to push wordpress posts from the commandline
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --config CONFIGFILE
+  --title TITLE
+  --posts POSTS_TO_PROCESS [POSTS_TO_PROCESS ...]
+                        a space seperated list of post names
+  --status {draft,publish,private}
+                        post status defaults to draft
