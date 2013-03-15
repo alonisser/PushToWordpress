@@ -53,13 +53,13 @@ setup(
     url = "https://github.com/alonisser/PushToWordpress",   # project home page, if any
     classifiers=(
         'Development Status :: 3 - Alpha',
-        'Enviroment :: Console',
+        'Environment :: Console',
         'Intended Audience :: Other Audience',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',#maybe more, didn't check
+        'Programming Language :: Python :: 2.7', #maybe more, didn't check
         'Topic :: Internet :: WWW/HTTP :: Site Management'
 
     ),
