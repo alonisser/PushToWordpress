@@ -20,10 +20,16 @@ if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
+if sys.argv[-1] == 'test_upload':
+    os.system('python setup.py upload -r https://testpypi.python.org/pypi')
+
+with open('README.md', 'r') as f:
+    long_desc = f.readlines()
+
 setup(
     name = "Push_To_Wordpress",
     version = VERSION,
-    #cripts = ['presser.py'],
+    #scripts = ['presser.py'],
 
     install_requires = required,
 
@@ -41,18 +47,21 @@ setup(
     author = "Alonisser",
     author_email = "alonisser@gmail.com",
     description = "a commandline tool to post to wordpress with XML-RPC",
-    license = "permissive",
+    long_description = long_desc,
+    license = "OSI Approved :: MIT License",
     keywords = "blogging wordpress commandline",
     url = "https://github.com/alonisser/PushToWordpress",   # project home page, if any
     classifiers=(
-        'Development Status :: 1 - alpha',
-        'Intended Audience :: bloggers',
+        'Development Status :: 3 - Alpha',
+        'Enviroment :: Console',
+        'Intended Audience :: Other Audience',
+        'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-#maybe more, didn't check
+        'Programming Language :: Python :: 2.7',#maybe more, didn't check
+        'Topic :: Internet :: WWW/HTTP :: Site Management'
+
     ),
 
     # could also include long_description, download_url, classifiers, etc.
