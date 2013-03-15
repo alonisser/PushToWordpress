@@ -24,7 +24,7 @@ if sys.argv[-1] == 'test_upload':
     os.system('python setup.py upload -r https://testpypi.python.org/pypi')
 
 with open('README.md', 'r') as f:
-    long_desc = f.readlines()
+    long_desc = f.read()
 
 setup(
     name = "Push_To_Wordpress",
@@ -46,7 +46,7 @@ setup(
     # metadata for upload to PyPI
     author = "Alonisser",
     author_email = "alonisser@gmail.com",
-    description = "a commandline tool to post to wordpress with XML-RPC",
+    description = "a commandline tool to post to Markdown files to wordpress posts (based on wordpress XML-RPC)",
     long_description = long_desc,
     license = "OSI Approved :: MIT License",
     keywords = "blogging wordpress commandline",
