@@ -9,7 +9,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-VERSION = '0.14'
+VERSION = '0.15'
 
 # Grab requirments.
 

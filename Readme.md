@@ -19,14 +19,19 @@ using wordpress [XML-RPC Api](http://codex.wordpress.org/XML-RPC_WordPress_API) 
 
 
 ##Installing
-currently:
+**The short way**:
+Straight from the cheeseshop
+
+    pip install push_to_wordpress
+
+**The long way**:
 
 
-    git clone this repo
-    cd repo folder
-    python setup.py install (If that doesn't work you should run the build command first)
+    git clone git://github.com/alonisser/PushToWordpress.git
 
-working on a 'pip install' version, straight from the cheeseshop  
+    cd PushToWordpress
+    python setup.py install #(If that doesn't work you should run the build command first)
+
 
 ##Usage:
 Current and quite basic:
@@ -44,7 +49,7 @@ Don't forget to enter your wordpress blog config in the config.ini file (look at
 ##License 
 see **[License](License.md)**
 
-##TODO or "How can I help":
+##TODO or "How can I help or contribute":
 
 check our [TODO](TODO.md)
 

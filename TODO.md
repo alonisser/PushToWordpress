@@ -5,10 +5,11 @@
 * Add tests
 * Implents TODOs in presser.py
 * Add docs
-* Publish to Pypi
+* Publish to Pypi [Done!]
 * Implent options [haflway there]
-* work with plaintext files, html files, Rst files etc.
+* work with plaintext files, html files, Rst files etc. maybe with pandoc
 * check for unicode problems
+* Convert Readme to ReST. so pypi would show me some love
 
 ##Options to implent
 
