@@ -13,7 +13,7 @@ VERSION = '0.14'
 
 # Grab requirments.
 
-with open('push_to_wordpress/require.txt','r') as f:
+with open('require.txt','r') as f:
     required = f.readlines()
 
 
