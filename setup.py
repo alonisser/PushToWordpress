@@ -20,11 +20,13 @@ with open('require.txt','r') as f:
 
 # Publish Helper.
 if sys.argv[-1] == 'publish':
+    # os.system('python setup.py bdist_egg --target-version=2.7 register upload ')
+    # os.system('python setup.py bdist_wininst --target-version=2.7 register upload')
     os.system('python setup.py sdist upload')
     sys.exit()
 
 if sys.argv[-1] == 'test_upload':
-    os.system('python setup.py upload -r https://testpypi.python.org/pypi')
+    os.system('python setup.py sdist upload -r https://testpypi.python.org/pypi')
 
 with open('README.md', 'r') as f:
     long_desc = f.read()
@@ -54,8 +56,8 @@ setup(
     license = "OSI Approved :: MIT License",
     keywords = "blogging wordpress commandline",
     url = "https://github.com/alonisser/PushToWordpress",   # project home page, if any
-    classifiers=(
-        'Development Status :: 3 - Beta',
+    classifiers=[
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: Other Audience',
         'Intended Audience :: Developers',
@@ -63,9 +65,10 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7', #maybe more, didn't check
-        'Topic :: Internet :: WWW/HTTP :: Site Management'
+        'Topic :: Internet :: WWW/HTTP :: Site Management',
+        ]
 
-    ),
+    
 
     # could also include long_description, download_url, classifiers, etc.
 )
