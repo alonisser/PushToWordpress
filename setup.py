@@ -9,11 +9,14 @@ try:
 except ImportError:
     from distutils.core import setup
 
-VERSION = '0.1'
+VERSION = '0.14'
 
 # Grab requirments.
-with open('require.txt') as f:
+
+with open('push_to_wordpress/require.txt','r') as f:
     required = f.readlines()
+
+
 
 # Publish Helper.
 if sys.argv[-1] == 'publish':
@@ -35,9 +38,9 @@ setup(
 
     package_data = {
         # If any package contains *.txt or *.rst files, include them:
-        '': ['*.md', '*.rst'],
+        '': ['*.md', '*.rst','*.txt','*.ini'],
     },
-    packages = ['push_to_wordpress'],
+    packages = ['push_to_wordpress',],
     entry_points = {
         'console_scripts': [
             'presser = push_to_wordpress.presser:presser'
@@ -52,7 +55,7 @@ setup(
     keywords = "blogging wordpress commandline",
     url = "https://github.com/alonisser/PushToWordpress",   # project home page, if any
     classifiers=(
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 3 - Beta',
         'Environment :: Console',
         'Intended Audience :: Other Audience',
         'Intended Audience :: Developers',

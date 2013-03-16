@@ -1,0 +1,2 @@
+Markdown==2.2.1
+python-wordpress-xmlrpc==2.2
