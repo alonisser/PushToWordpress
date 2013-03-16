@@ -10,6 +10,7 @@
 * work with plaintext files, html files, Rst files etc. maybe with pandoc
 * check for unicode problems
 * Convert Readme to ReST. so pypi would show me some love
+* Add travic-ci tests for other platforms
 
 ##Options to implent
 
