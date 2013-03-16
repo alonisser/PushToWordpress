@@ -1,1 +1,2 @@
-include require.txt push_to_wordpress/configdemo.ini Readme.md License.md
+include require.txt push_to_wordpress/configdemo.ini Readme.md License.md usage.txt Readme_rst.rst
+recursive-include docs *.txt *.md *.html

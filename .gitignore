@@ -6,3 +6,4 @@ output.html
 build/
 dist/
 Push_To_Wordpress.egg-info
+testutil.py

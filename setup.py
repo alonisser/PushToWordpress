@@ -9,7 +9,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-VERSION = '0.15'
+VERSION = '0.154'
 
 # Grab requirments.
 
@@ -22,13 +22,19 @@ with open('require.txt','r') as f:
 if sys.argv[-1] == 'publish':
     # os.system('python setup.py bdist_egg --target-version=2.7 register upload ')
     # os.system('python setup.py bdist_wininst --target-version=2.7 register upload')
+    # try:
+    #     os.system('pandoc -f markdown -t rst Readme.md -o Readme_rst.rst ')
+    # except:
+    #     print("pandoc isn't installed, please update the readme_rst by yourself")
+    #turns out the automatic rst that is created by pandoc can't be handled by pypi, doint static right now
     os.system('python setup.py sdist upload')
     sys.exit()
 
 if sys.argv[-1] == 'test_upload':
     os.system('python setup.py sdist upload -r https://testpypi.python.org/pypi')
+    sys.exit()
 
-with open('README.md', 'r') as f:
+with open('Readme_rst.rst','rt') as f:
     long_desc = f.read()
 
 setup(
