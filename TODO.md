@@ -11,6 +11,7 @@
 * check for unicode problems
 * Convert Readme to ReST. so pypi would show me some love
 * Add travic-ci tests for other platforms
+* move this to an issue tracker
 
 ##Options to implent
 
@@ -18,7 +19,7 @@
 * Add option to upload as markup without html processing
 * Add option to upload media files with the post
 * Add option to choose the config file [Done!]
-* Add option for a dry-run - just checking if the connection works
+* Add option for a dry-run - just checking if the connection works [Done!]
 * Add option to choose post_status: draft (default), published, private. [Done!]
 * Add option to choose title [Done!]
-* find a config.ini in the whole folder tree, add option to various config*.ini names
+* find a config.ini in the whole folder tree, add option to various config*.ini names [Done!]
