@@ -24,7 +24,8 @@ def presser():
     parser.add_argument('--title', action='store', dest='title', default='A new post' )
     parser.add_argument('--posts', help='a space seperated list of post names', default=[], dest='posts_to_process',nargs='+')
     parser.add_argument('--status', choices=('draft', 'publish','private'),help='post status defaults to %(default)s', default='draft', dest='status')
-    parser.add_argument('--dry-run',action="store_true", dest = 'dry_run', default=False) #to implent later
+    parser.add_argument('--no-parse', action="store_true", dest = 'no_parse', default=False, help = "defaults to False, if True the markup won't be parsed to html but uploaded as-is")
+    parser.add_argument('--dry-run',action="store_true", dest = 'dry_run', default=False) 
     ## need to implent a fuller Usage description
     options = parser.parse_args()
 
@@ -74,12 +75,15 @@ def presser():
     for p in options.posts_to_process:
         with open(p,"r") as f:
             #TODO: add try block to check for encoded strings or files and then use codecs to open
-            html = markdown(f.read())
+            if not options.no_parse:
+                text = markdown(f.read())
+            else:
+                text = f.read()
             f.close()
 
         post = WordPressPost()
         post.title =options.title
-        post.content = html
+        post.content = text
         post.post_status = options.status
         if options.dry_run:
             print("Dry run mode:")
