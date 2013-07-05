@@ -12,7 +12,7 @@ import re
 
 def read_config(configuration_parser):
     cparser = configuration_parser
-    siteurl = "%s/%s" % (cparser.get('wordpress_site','site'),"xmlrpc.php")
+    siteurl =  "%s/%s" % (cparser.get('wordpress_site','site'),"xmlrpc.php")
     username = cparser.get('wordpress_site','username')
     password = cparser.get('wordpress_site','password')
     return (siteurl, username, password)
@@ -28,25 +28,23 @@ def presser():
     ## need to implent a fuller Usage description
     options = parser.parse_args()
 
-    exiting = "Would exit now. run presser --help for commandline options"
+    exit_msg = "Presser would exit now. run presser --help for commandline options"
     #parse configfile to wordpress
     #TODO: add an option to use commandline args instead of config file
     cparser = SafeConfigParser()
-    try: #if there is a config option in commandline options
-        cparser.read(options.configfile)
+    try: #if there is a config option in commandline options or can be found walking the folders
+        configfile = options.configfile
+        if not configfile:
+            configfile = find_config_file()
+        cparser.read(configfile)
         siteurl, username, password = read_config(cparser)
-    except TypeError:
-        try:
-            #searching for configfile in local folder. TODO: change this to a recursive tree search
-            configpath = os.path.dirname(os.path.abspath("__file__"))
-            cparser.read(os.path.join(configpath,'config.ini'))
-            siteurl, username, password = read_config(cparser)
-        except (NoSectionError, NoOptionError):
-            print("missing configuration information or file, please input them now:")
-            import getpass
-            siteurl = '%s/%s' % (raw_input("Full site url: "),"xmlrpc.php")
-            username = raw_input("Wordpress site username: ")
-            password = getpass.getpass("Enter wordpress site password: ")
+    except (NoSectionError, NoOptionError) as e:
+        print (e.message)
+        print("missing configuration information or file, please input them now:")
+        import getpass
+        siteurl = '%s/%s' % (raw_input("Full site url: "),"xmlrpc.php")
+        username = raw_input("Wordpress site username: ")
+        password = getpass.getpass("Enter wordpress site password: ")
     
     #very basic, checking for http:// in the beginning, since this fails wordpress_xmprpc
     valid_url = re.match(r"^http://", siteurl)
@@ -62,7 +60,7 @@ def presser():
         wp = Client(siteurl,username, password)
     except (IOError, ServerConnectionError) as e:
         print("Either a invalid wordpress site address or your site doesn't have the XML-RPC protocol turned on.", 
-        exiting, sep="\n")
+        exit_msg, sep="\n")
         sys.exit()
     
     if options.dry_run:
@@ -70,7 +68,7 @@ def presser():
 
     #send the parsed html to wordpress
     if len(options.posts_to_process) == 0:
-        print("No posts to post",exiting ,sep="\n")
+        print("No posts to post",exit_msg ,sep="\n")
         sys.exit()
 
     for p in options.posts_to_process:
@@ -92,8 +90,17 @@ def presser():
             wp.call(NewPost(post))
             print ('Done uploading: %s' % p)
         except InvalidCredentialsError as e:
-            print(e.message, exiting, sep="\n")
+            print(e.message, exit_msg, sep="\n")
             sys.exit()
+
+def find_config_file():
+    #for root, dirs, files in os.walk(os.path.dirname(os.path.abspath("__file__"))):
+    for root, dirs, files in os.walk(os.path.dirname(os.path.abspath("__file__"))):
+        
+        for f in files:
+            if os.path.splitext(f)[1] == ".ini":
+                print("Found and using config file: %s in %s" % (f,root)) #debug
+                return os.path.join(root, f)
 
 if __name__ == '__main__':
    presser()
