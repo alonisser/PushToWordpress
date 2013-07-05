@@ -1,6 +1,7 @@
 usage: presser-script.py [-h] [--config CONFIGFILE] [--title TITLE]
                          [--posts POSTS_TO_PROCESS [POSTS_TO_PROCESS ...]]
-                         [--status {draft,publish,private}]
+                         [--status {draft,publish,private}] [--no-parse]
+                         [--dry-run]
 
 presser - to push wordpress posts from the commandline
 
@@ -12,3 +13,6 @@ optional arguments:
                         a space seperated list of post names
   --status {draft,publish,private}
                         post status defaults to draft
+  --no-parse            defaults to False, if True the markup won't be parsed
+                        to html but uploaded as-is
+  --dry-run
