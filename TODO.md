@@ -6,14 +6,14 @@
 * Implents TODOs in presser.py
 * Add docs
 * Publish to Pypi [Done!]
-* Implent options [haflway there]
-* work with plaintext files, html files, Rst files etc. maybe with pandoc
+* Implement options [halfway there]
+* work with plain text files, html files, Rst files etc. maybe with pandoc
 * check for unicode problems
-* Convert Readme to ReST. so pypi would show me some love
+* Convert Readme to Rst. so pypi would show me some love
 * Add travic-ci tests for other platforms
-* move this to an issue tracker
+* move TODOs to an issue tracker
 
-##Options to implent
+##Options to implement
 
 * Add option to upload multiple files form command line [Done!]
 * Add option to upload as markup without html processing
